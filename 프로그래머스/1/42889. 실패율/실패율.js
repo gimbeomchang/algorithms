@@ -4,7 +4,7 @@ function solution(N, stages) {
 
   // [index, ratio] 를 원소로 가지는 2차원 배열
   const fRatio = processedStages.map((s, i) => {
-    const sum = processedStages.slice(i).reduce((acc, cur) => acc + cur, 0);
+    const sum = processedStages.slice(i).reduce((acc, cur) => acc + cur, 0); // TODO: 시간 복잡도 줄이기 - O(N^2) -> O(M + N * logN)
     return [i + 1, s / sum];
   });
 
