@@ -27,5 +27,5 @@ const solution = (dirs) => {
         }
     })
     
-    return [...visited].length / 2;
+    return visited.size / 2;
 }
