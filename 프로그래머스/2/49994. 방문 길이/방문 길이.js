@@ -23,8 +23,7 @@ const solution = (dirs) => {
         if (isValidCoordinate(next)) {
             visited.add(`(${current.x}, ${current.y}) -> (${next.x}, ${next.y})`);
             visited.add(`(${next.x}, ${next.y}) -> (${current.x}, ${current.y})`);
-            current.x = next.x;
-            current.y = next.y;
+            Object.assign(current, next);
         }
     })
     
