@@ -1,16 +1,10 @@
 const solution = (s) => {
   const stack = [];
 
-  [...s].forEach((c) => {
-    const len = stack.length;
+  for (const c of s) {
+    if (stack.length > 0 && stack[stack.length - 1] === c) stack.pop();
+    else stack.push(c);
+  }
 
-    if (!len) stack.push(c);
-    else {
-      const top = stack[len - 1];
-      if (top === c) stack.pop();
-      else stack.push(c);
-    }
-  });
-
-  return Number(stack.length === 0);
+  return +(stack.length === 0);
 };
